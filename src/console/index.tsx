@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import DebuggerContext from '../context/debugger-context';
 import { DebuggerProp } from '../types';
-import './styles.scss';
+import './styles.css';
 
 const Console: FC = () => {
   const { setDebuggerProp, debuggerProps } = useContext(DebuggerContext);
