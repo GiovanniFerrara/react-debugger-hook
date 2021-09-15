@@ -1,0 +1,32 @@
+{
+  "name": "react-debugger-hook",
+  "version": "1.0.0",
+  "author": "gianmarco.ferrara@gmail.com",
+  "description": "A hook that easily injects values to react apps, via debugging console.",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "test": "",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "debugger",
+    "hooks"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.0",
+    "react": "^17.0.2"
+  }
+}
