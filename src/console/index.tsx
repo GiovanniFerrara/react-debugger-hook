@@ -24,8 +24,8 @@ const Console: FC = () => {
   return (
     <>
       <ReactDebuggerProvider>
-        <button style={styles.debugProp} className="react-debugger-hook_button" type="button" onClick={handleToggleClick}>
-          Debugger
+        <button style={styles.button} type="button" onClick={handleToggleClick}>
+          Edit
         </button>
         {isOpen && (
         <div style={{

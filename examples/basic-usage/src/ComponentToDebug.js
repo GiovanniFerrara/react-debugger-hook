@@ -2,10 +2,10 @@ import React from 'react'
 import { useDebuggerHook } from 'react-debugger-hook'
 
 const Box = () => {
-  const name = useDebuggerHook('name', 'value')
-  return (<div>
+  const name = useDebuggerHook('color', '#fff')
+  return (<div style={{color: name}}>
     Hello from
-    {name}
+    {' ' + name}
   </div>)
 }
 
