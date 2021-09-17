@@ -17,7 +17,6 @@ export type DebuggerAction =
 export interface DebuggerContextInterface {
   debuggerProps: DebuggerProp[],
   setDebuggerProp: (arg: DebuggerProp) => void,
-  removeDebuggerProp: (arg: string) => void,
 }
 
 export interface DebuggerHookInterface {

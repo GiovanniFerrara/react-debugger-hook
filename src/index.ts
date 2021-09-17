@@ -1,2 +1,3 @@
-export { default as ReactDebuggerProvider } from './context/provider';
-export { default as ReactDebuggerHook } from './hook';
+export { default as ReactDebuggerProvider } from './store/store';
+export { default as useDebuggerHook } from './hook';
+export { default as ReactDebuggerConsole } from './console';

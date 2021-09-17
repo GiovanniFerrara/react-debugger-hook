@@ -1,12 +1,13 @@
 import React, {
-  FormEvent, useState, FC, useContext,
+  FormEvent, useState, FC,
 } from 'react';
-import DebuggerContext from '../context/debugger-context';
+import { useStore } from '../store/context';
 import { DebuggerProp } from '../types';
-import './styles.css';
+import ReactDebuggerProvider from '../store/store';
+import * as styles from './styles';
 
 const Console: FC = () => {
-  const { setDebuggerProp, debuggerProps } = useContext(DebuggerContext);
+  const { setDebuggerProp, debuggerProps } = useStore();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleToggleClick = () => {
@@ -22,27 +23,40 @@ const Console: FC = () => {
 
   return (
     <>
-      <button className="react-debugger-hook_button" type="button" onClick={handleToggleClick}>
-        Debugger
-      </button>
-      {isOpen && (
-      <div className="react-debugger-hook_console-wrapper">
-        {debuggerProps.map((debugProp: DebuggerProp) => (
-          <div className="react-debugger-hook_debug-prop" key={debugProp.key}>
-            <div className="react-debugger-hook_label">
-              {' '}
-              {debugProp.key}
-              {' '}
-            </div>
-            <input
-              className="react-debugger-hook_input"
-              value={debugProp.value}
-              onChange={(e: FormEvent<HTMLInputElement>) => handlePropertyChange(e, debugProp.key)}
-            />
-          </div>
-        ))}
-      </div>
-      )}
+      <ReactDebuggerProvider>
+        <button style={styles.debugProp} className="react-debugger-hook_button" type="button" onClick={handleToggleClick}>
+          Debugger
+        </button>
+        {isOpen && (
+        <div style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '200px',
+          height: '100px',
+          zIndex: 20000,
+          backgroundColor: 'rgba(0,0,0,0.8)',
+          color: 'red',
+        }}
+        >
+          {debuggerProps.sort((a: DebuggerProp, b: DebuggerProp) => ((a.key < b.key) ? 1 : -1))
+            .map((debugProp: DebuggerProp) => (
+              <div style={styles.debugProp} key={debugProp.key}>
+                <div style={styles.hookLabel}>
+                  {debugProp.key}
+                </div>
+                <input
+                  style={styles.hookInput}
+                  value={debugProp.value}
+                  onChange={
+                  (e: FormEvent<HTMLInputElement>) => handlePropertyChange(e, debugProp.key)
+                }
+                />
+              </div>
+            ))}
+        </div>
+        )}
+      </ReactDebuggerProvider>
     </>
   );
 };

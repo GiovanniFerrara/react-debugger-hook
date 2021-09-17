@@ -1,10 +1,14 @@
-import { useContext } from 'react';
-import DebuggerContext from '../context/debugger-context';
-import { DebuggerHookInterface } from '../types';
+import { useEffect } from 'react';
+import { useStore } from '../store/context';
 
-const DebuggerHook = (): DebuggerHookInterface => {
-  const { debuggerProps, setDebuggerProp } = useContext(DebuggerContext);
-  return { debuggerProps, setDebuggerProp };
+const useDebuggerHook = (key: string, value: string): string | undefined => {
+  const { debuggerProps, setDebuggerProp } = useStore();
+
+  useEffect(() => {
+    setDebuggerProp({ key, value });
+  }, [key, value, setDebuggerProp]);
+
+  return debuggerProps.find((p) => p.key === key)?.value;
 };
 
-export default DebuggerHook;
+export default useDebuggerHook;
