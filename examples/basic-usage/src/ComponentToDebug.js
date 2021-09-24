@@ -1,13 +1,12 @@
 import React from 'react'
 import { useDebuggerHook } from 'react-debugger-hook'
 
-const Box = () => {
+const ComponentToDebug = () => {
   const color = useDebuggerHook('color', '#fff')
-  const text = useDebuggerHook('text', 'Your name')
+  const yourName = useDebuggerHook('Your name', 'John')
   return (<div style={{color: color}}>
-    Hello from
-    {text}
+    {`Hello from ${yourName}`}
   </div>)
 }
 
-export default Box
+export default ComponentToDebug

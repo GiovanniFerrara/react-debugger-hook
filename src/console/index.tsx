@@ -25,7 +25,7 @@ const Console: FC = () => {
     <>
       <ReactDebuggerProvider>
         <button style={styles.button} type="button" onClick={handleToggleClick}>
-          Edit
+          {`${!isOpen ? 'Open' : 'Close'}`}
         </button>
         {isOpen && (
         <div style={styles.consoleWrapper}>
