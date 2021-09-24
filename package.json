@@ -1,6 +1,6 @@
 {
   "name": "react-debugger-hook",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "gianmarco.ferrara@gmail.com",
   "description": "A hook that easily injects values to react apps, via debugging console.",
   "main": "lib/index.js",
