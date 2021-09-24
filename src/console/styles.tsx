@@ -5,10 +5,11 @@ export const consoleWrapper: CSSProperties = {
   bottom: 20,
   right: 20,
   width: 200,
-  height: 100,
   zIndex: 200000000,
   backgroundColor: 'rgba(0,0,0,0.8)',
   color: 'red',
+  paddingBottom: 8,
+  paddingTop: 8,
 };
 
 export const button: CSSProperties = {
@@ -23,12 +24,13 @@ export const button: CSSProperties = {
 
 export const debugProp: CSSProperties = {
   paddingLeft: 16,
+  paddingBottom: 8,
+  paddingTop: 8,
   alignItems: 'center',
 };
 export const hookLabel: CSSProperties = {
   whiteSpace: 'nowrap',
   paddingBottom: 8,
-  paddingTop: 8,
   fontSize: 16,
 };
 

@@ -28,17 +28,7 @@ const Console: FC = () => {
           Edit
         </button>
         {isOpen && (
-        <div style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
-          width: '200px',
-          height: '100px',
-          zIndex: 20000,
-          backgroundColor: 'rgba(0,0,0,0.8)',
-          color: 'red',
-        }}
-        >
+        <div style={styles.consoleWrapper}>
           {debuggerProps.sort((a: DebuggerProp, b: DebuggerProp) => ((a.key < b.key) ? 1 : -1))
             .map((debugProp: DebuggerProp) => (
               <div style={styles.debugProp} key={debugProp.key}>

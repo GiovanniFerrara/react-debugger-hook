@@ -3,10 +3,9 @@ import { useStore } from '../store/context';
 
 const useDebuggerHook = (key: string, value: string): string | undefined => {
   const { debuggerProps, setDebuggerProp } = useStore();
-
   useEffect(() => {
     setDebuggerProp({ key, value });
-  }, [key, value, setDebuggerProp]);
+  }, [key, value]);
 
   return debuggerProps.find((p) => p.key === key)?.value;
 };
