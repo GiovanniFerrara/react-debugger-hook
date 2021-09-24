@@ -1,6 +1,6 @@
 {
   "name": "react-debugger-hook",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "gianmarco.ferrara@gmail.com",
   "description": "A hook that easily injects values to react apps, via debugging console.",
   "main": "lib/index.js",
@@ -30,7 +30,7 @@
   },
   "peerDependencies": {
     "@types/react": "^17.0.0",
-    "react": "^17.0.2"
+    "react": "^17.* || ^18.*"
   },
   "directories": {
     "lib": "lib"
