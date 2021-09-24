@@ -1,6 +1,8 @@
 # react-debugger-hook
 A hook that easily injects values to react apps through a user friendly console.
 
+Live example: https://react-debugger-hook.netlify.app
+
 This is designed for a person that can't run you project locally and make changes like: colors, styles, animations settings, run the app in different mode, and more...
 But you can allow to change those values with a couple lines of code.
 
