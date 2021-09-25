@@ -3,8 +3,8 @@ A hook that easily injects values to react apps through a user friendly console.
 
 Live example: https://react-debugger-hook.netlify.app
 
-This is designed for a person that can't run you project locally and make changes like: colors, styles, animations settings, run the app in different mode, and more...
-But you can allow to change those values with a couple lines of code.
+This is designed for those who want to review a react project, being able to interact with things like: colors, styles, animations settings, run the app in different mode, and more...
+React-debugger-hook allows you to have an easy to use console where the reviewer can input values (text, colors, ...) directly into your app.
 
 ## Install
 
@@ -13,7 +13,9 @@ npm i -S react-debugger-hook
 ```
 
 ## Usage
-In this example, by setting those two values, shows a button on the left side of the screen with written "Open Console". When you click on that button, a console on right side will be opened and there the user user can inject those values into your react app.
+In this example, just by initializing these two variables, an "Open" button on the left side of the screen will be shown. 
+
+When you click on that button, an input console on right side will be opened. There the reviewer can inject those values directly into your react app.
 
 ```js
 // src/App.js
@@ -23,7 +25,7 @@ import ComponentToDebug from './ComponentToDebug';
 function App() {
    return (
     <ReactDebuggerProvider>
-      {process.env.NODE_ENV === 'development' && <ReactDebuggerConsole />}
+      {process.env.NODE_ENV !== 'production' && <ReactDebuggerConsole />}
           <ComponentToDebug />
     </ReactDebuggerProvider>
   );
@@ -68,9 +70,9 @@ const ComponentToDebug = () => {
 
 ```
 ```
-currentValue: String | the value that can be injected and changed though the console.
+currentValue: String | the value that can be injected and changed through the console.
 
-key: String | the name of the property to change, this is shown into the console, choose a meaningful name.
+key: String | the name of the property to change, this is shown into the console. Choosing a meaningful name is recommended.
 
 initialValue: String | the initial value.
 ```
@@ -99,10 +101,3 @@ ReactDebuggerProvider: ReactComponent | Provides the context consumed by the hoo
 ## License
 
 [MIT](http://vjpr.mit-license.org)
-
-[npm-image]: https://img.shields.io/npm/v/live-xxx.svg
-[npm-url]: https://npmjs.org/package/live-xxx
-[travis-image]: https://img.shields.io/travis/live-js/live-xxx/master.svg
-[travis-url]: https://travis-ci.org/live-js/live-xxx
-[coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
-[coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
